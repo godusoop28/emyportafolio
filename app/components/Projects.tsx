@@ -414,27 +414,9 @@ export default function Projects() {
               }}
               className="project-card"
             >
-              <div
-                style={{
-                  display: "grid",
-                  gridTemplateColumns: "1fr auto",
-                  gap: 0,
-                  minHeight: 320,
-                }}
-                className="flex-col md:grid"
-              >
+              <div className="project-card-grid">
                 {/* Left: Content */}
-                <div
-                  style={{
-                    padding: "40px 40px 40px 44px",
-                    display: "flex",
-                    flexDirection: "column",
-                    justifyContent: "space-between",
-                    gap: 24,
-                    position: "relative",
-                    overflow: "hidden",
-                  }}
-                >
+                <div className="project-card-content">
                   {/* Background gradient accent */}
                   <div
                     style={{

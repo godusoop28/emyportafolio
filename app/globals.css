@@ -267,6 +267,37 @@ body {
   transform: translateY(-8px);
 }
 
+.project-card-grid {
+  display: flex;
+  flex-direction: column;
+  min-height: auto;
+}
+
+@media (min-width: 768px) {
+  .project-card-grid {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    min-height: 320px;
+  }
+}
+
+.project-card-content {
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 768px) {
+  .project-card-content {
+    padding: 40px 40px 40px 44px;
+    gap: 24px;
+  }
+}
+
 .timeline-line {
   background: linear-gradient(to bottom, transparent, var(--accent-orange), var(--accent-blue), transparent);
 }
