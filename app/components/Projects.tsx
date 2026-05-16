@@ -19,10 +19,12 @@ const projects = [
       primary: "#3B82F6",
       secondary: "#60A5FA",
       bg: "#0D1B2A",
+      displayName: "Fernando D.",
+      displayUrl: "",
       items: [
-        { label: "Pacientes", value: "48", icon: "👤" },
-        { label: "Sesiones hoy", value: "6", icon: "📅" },
-        { label: "Ejercicios", value: "120", icon: "💪" },
+        { label: "Pacientes", value: "48" },
+        { label: "Sesiones hoy", value: "6" },
+        { label: "Ejercicios", value: "120" },
       ],
     },
   },
@@ -42,12 +44,128 @@ const projects = [
       primary: "#10B981",
       secondary: "#34D399",
       bg: "#0A1A14",
+      displayUrl: "proyectoresiliente.org",
+      displayName: "Proyecto Resiliente",
       items: [
-        { label: "Usuarios", value: "230", icon: "🌱" },
-        { label: "Recursos", value: "85", icon: "📄" },
-        { label: "Eventos", value: "12", icon: "🗓️" },
+        { label: "Usuarios", value: "230" },
+        { label: "Recursos", value: "85" },
+        { label: "Eventos", value: "12" },
       ],
     },
+  },
+  {
+    title: "Aureon Ingeniería",
+    subtitle: "Sitio web corporativo de ingeniería",
+    description:
+      "Sitio web profesional para empresa de ingeniería y construcción. Multi-página con secciones de servicios, proyectos realizados, cobertura geográfica, testimonios de clientes y contacto. Animaciones fluidas con Framer Motion y diseño responsivo.",
+    url: "https://www.aureoningenieria.com.mx/",
+    tags: ["Next.js", "Framer Motion", "Tailwind CSS", "Lucide React"],
+    accentColor: "#F59E0B",
+    accentColorLight: "#FCD34D",
+    gradientFrom: "#78350F",
+    gradientTo: "#1C0800",
+    mockupType: "browser" as const,
+    mockupContent: {
+      primary: "#F59E0B",
+      secondary: "#FCD34D",
+      bg: "#130A00",
+      displayUrl: "aureoningenieria.com.mx",
+      displayName: "Aureon Ingeniería",
+      items: [
+        { label: "Proyectos", value: "50+" },
+        { label: "Servicios", value: "12" },
+        { label: "Cobertura", value: "5 estados" },
+      ],
+    },
+  },
+  {
+    title: "Bety Web",
+    subtitle: "Portafolio profesional de terapeuta",
+    description:
+      "Sitio web para terapeuta ocupacional con presentación de servicios especializados: terapia de lenguaje, inclusión educativa y atención TEA/TDAH. Secciones de experiencia, galería fotográfica y contacto. Diseño elegante en Next.js.",
+    url: "https://betyweb.vercel.app/",
+    tags: ["Next.js", "Framer Motion", "Tailwind CSS", "TypeScript"],
+    accentColor: "#8B5CF6",
+    accentColorLight: "#A78BFA",
+    gradientFrom: "#2E1065",
+    gradientTo: "#0F0A1F",
+    mockupType: "browser" as const,
+    mockupContent: {
+      primary: "#8B5CF6",
+      secondary: "#A78BFA",
+      bg: "#0A0614",
+      displayUrl: "betyweb.vercel.app",
+      displayName: "Beatriz García",
+      items: [
+        { label: "Servicios", value: "8" },
+        { label: "Experiencia", value: "6 años" },
+        { label: "Pacientes", value: "200+" },
+      ],
+    },
+  },
+  {
+    title: "Karlita Web",
+    subtitle: "Portafolio personal creativo",
+    description:
+      "Portafolio personal creativo con galería de proyectos, scroll suave con Lenis y animaciones paralax con Framer Motion. Diseño minimalista sobre fondo oscuro con secciones de about, galería, proyectos destacados y contacto.",
+    url: "https://karlitaweb.vercel.app/",
+    tags: ["Next.js", "Framer Motion", "Lenis", "Tailwind CSS"],
+    accentColor: "#EC4899",
+    accentColorLight: "#F9A8D4",
+    gradientFrom: "#500724",
+    gradientTo: "#1A0010",
+    mockupType: "browser" as const,
+    mockupContent: {
+      primary: "#EC4899",
+      secondary: "#F9A8D4",
+      bg: "#100008",
+      displayUrl: "karlitaweb.vercel.app",
+      displayName: "Karlita",
+      items: [
+        { label: "Proyectos", value: "24" },
+        { label: "Galería", value: "60+" },
+        { label: "Clientes", value: "18" },
+      ],
+    },
+  },
+];
+
+const smallProjects = [
+  {
+    title: "FisioPro",
+    subtitle: "App móvil clínica — React Native",
+    description:
+      "Aplicación de gestión clínica para fisioterapeutas. Manejo de pacientes, citas y sesiones con almacenamiento local SQLite, documentación médica y sincronización con API Spring Boot.",
+    tags: ["React Native", "Expo", "TypeScript", "SQLite", "Spring Boot"],
+    accentColor: "#06B6D4",
+    initials: "FP",
+  },
+  {
+    title: "GymPro",
+    subtitle: "App de entrenamiento — Flutter",
+    description:
+      "Aplicación móvil Flutter con tema oscuro para seguimiento de rutinas de gym. Gráficas de progreso con fl_chart, autenticación con Provider y gestión de datos de entrenamiento.",
+    tags: ["Flutter", "Dart", "Provider", "fl_chart", "Google Fonts"],
+    accentColor: "#22C55E",
+    initials: "GP",
+  },
+  {
+    title: "Resiliente Café",
+    subtitle: "Plataforma web con tienda y talleres",
+    description:
+      "Web app para el ecosistema Resiliente con tienda online, blog, talleres, panel de administración y sistema de login. Frontend React + Vite con React Router.",
+    tags: ["React", "Vite", "React Router", "Lucide React"],
+    accentColor: "#10B981",
+    initials: "RC",
+  },
+  {
+    title: "Electricidad",
+    subtitle: "Sitio estático de servicios eléctricos",
+    description:
+      "Sitio web sencillo y directo para presentación de servicios de electricidad. Galería de trabajos realizados con fotografías y video. Desarrollo estático en HTML y CSS puro.",
+    tags: ["HTML", "CSS", "Static Site"],
+    accentColor: "#F59E0B",
+    initials: "EL",
   },
 ];
 
@@ -64,7 +182,6 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
         position: "relative",
       }}
     >
-      {/* Phone notch */}
       <div
         style={{
           background: "#000",
@@ -75,17 +192,9 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
           paddingBottom: 6,
         }}
       >
-        <div
-          style={{
-            width: 60,
-            height: 6,
-            background: "#1a1a1a",
-            borderRadius: 6,
-          }}
-        />
+        <div style={{ width: 60, height: 6, background: "#1a1a1a", borderRadius: 6 }} />
       </div>
 
-      {/* Header */}
       <div
         style={{
           padding: "12px 16px 10px",
@@ -94,10 +203,11 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
         }}
       >
         <div style={{ fontSize: "0.65rem", color: "#9CA3AF", marginBottom: 2 }}>Bienvenido</div>
-        <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#F1F5F9" }}>Fernando D.</div>
+        <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#F1F5F9" }}>
+          {content.displayName || "Usuario"}
+        </div>
       </div>
 
-      {/* Stats */}
       <div style={{ padding: "12px 14px", display: "flex", flexDirection: "column", gap: 8 }}>
         {content.items.map((item) => (
           <div
@@ -113,24 +223,17 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <span style={{ fontSize: "0.8rem" }}>{item.icon}</span>
+              <div style={{ width: 5, height: 5, borderRadius: "50%", background: content.primary, opacity: 0.8, flexShrink: 0 }} />
               <span style={{ fontSize: "0.68rem", color: "#94A3B8", fontWeight: 500 }}>
                 {item.label}
               </span>
             </div>
-            <span
-              style={{
-                fontSize: "0.85rem",
-                fontWeight: 800,
-                color: content.secondary,
-              }}
-            >
+            <span style={{ fontSize: "0.85rem", fontWeight: 800, color: content.secondary }}>
               {item.value}
             </span>
           </div>
         ))}
 
-        {/* Chart placeholder */}
         <div
           style={{
             height: 60,
@@ -158,7 +261,6 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
         </div>
       </div>
 
-      {/* Bottom nav */}
       <div
         style={{
           padding: "8px 14px 16px",
@@ -167,7 +269,7 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
           borderTop: "1px solid rgba(255,255,255,0.05)",
         }}
       >
-        {["🏠", "👥", "📊", "⚙️"].map((icon, i) => (
+        {[0, 1, 2, 3].map((i) => (
           <div
             key={i}
             style={{
@@ -178,10 +280,16 @@ function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              fontSize: "0.75rem",
             }}
           >
-            {icon}
+            <div
+              style={{
+                width: i === 0 ? 10 : 8,
+                height: i === 0 ? 10 : 8,
+                borderRadius: i === 2 ? "50%" : 2,
+                background: i === 0 ? content.primary : "rgba(255,255,255,0.15)",
+              }}
+            />
           </div>
         ))}
       </div>
@@ -202,17 +310,15 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
         boxShadow: `0 30px 60px rgba(0,0,0,0.5)`,
       }}
     >
-      {/* Browser chrome */}
       <div className="browser-chrome">
         <div style={{ display: "flex", gap: 6 }}>
           <div className="browser-dot" style={{ background: "#FF5F57" }} />
           <div className="browser-dot" style={{ background: "#FEBC2E" }} />
           <div className="browser-dot" style={{ background: "#28C840" }} />
         </div>
-        <div className="browser-url">proyectoresiliente.org</div>
+        <div className="browser-url">{content.displayUrl || "localhost:3000"}</div>
       </div>
 
-      {/* Navbar */}
       <div
         style={{
           padding: "10px 16px",
@@ -236,18 +342,12 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
           {[1, 2, 3].map((i) => (
             <div
               key={i}
-              style={{
-                width: 30,
-                height: 5,
-                background: "rgba(255,255,255,0.1)",
-                borderRadius: 3,
-              }}
+              style={{ width: 30, height: 5, background: "rgba(255,255,255,0.1)", borderRadius: 3 }}
             />
           ))}
         </div>
       </div>
 
-      {/* Hero area */}
       <div
         style={{
           padding: "16px",
@@ -264,7 +364,7 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
             letterSpacing: "0.02em",
           }}
         >
-          Proyecto Resiliente
+          {content.displayName || "Proyecto"}
         </div>
         <div
           style={{
@@ -295,11 +395,10 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
             fontWeight: 600,
           }}
         >
-          Únete
+          Ver más
         </div>
       </div>
 
-      {/* Stats grid */}
       <div
         style={{
           display: "grid",
@@ -315,20 +414,9 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
         {content.items.map((item) => (
           <div
             key={item.label}
-            style={{
-              padding: "10px 8px",
-              background: content.bg,
-              textAlign: "center",
-            }}
+            style={{ padding: "10px 8px", background: content.bg, textAlign: "center" }}
           >
-            <div style={{ fontSize: "0.65rem", marginBottom: 2 }}>{item.icon}</div>
-            <div
-              style={{
-                fontSize: "0.8rem",
-                fontWeight: 800,
-                color: content.secondary,
-              }}
-            >
+            <div style={{ fontSize: "0.8rem", fontWeight: 800, color: content.secondary }}>
               {item.value}
             </div>
             <div style={{ fontSize: "0.55rem", color: "#6B7280" }}>{item.label}</div>
@@ -369,7 +457,6 @@ export default function Projects() {
       />
 
       <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
-
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -400,6 +487,7 @@ export default function Projects() {
           </h2>
         </motion.div>
 
+        {/* Featured projects — full cards */}
         <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
           {projects.map((project, i) => (
             <motion.div
@@ -407,17 +495,11 @@ export default function Projects() {
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, amount: 0.15 }}
-              transition={{
-                duration: 0.8,
-                delay: i * 0.1,
-                ease: [0.16, 1, 0.3, 1],
-              }}
+              transition={{ duration: 0.8, delay: i * 0.08, ease: [0.16, 1, 0.3, 1] }}
               className="project-card"
             >
               <div className="project-card-grid">
-                {/* Left: Content */}
                 <div className="project-card-content">
-                  {/* Background gradient accent */}
                   <div
                     style={{
                       position: "absolute",
@@ -431,7 +513,6 @@ export default function Projects() {
                   />
 
                   <div style={{ position: "relative", zIndex: 1 }}>
-                    {/* Number */}
                     <div
                       style={{
                         fontSize: "0.7rem",
@@ -472,11 +553,8 @@ export default function Projects() {
                     </p>
                   </div>
 
-                  {/* Tags & buttons */}
                   <div style={{ position: "relative", zIndex: 1 }}>
-                    <div
-                      style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}
-                    >
+                    <div style={{ display: "flex", flexWrap: "wrap", gap: 8, marginBottom: 24 }}>
                       {project.tags.map((tag) => (
                         <span
                           key={tag}
@@ -533,7 +611,6 @@ export default function Projects() {
                   </div>
                 </div>
 
-                {/* Right: Mockup */}
                 <div
                   style={{
                     padding: "40px 44px 40px 20px",
@@ -566,6 +643,151 @@ export default function Projects() {
                       <BrowserMockup content={project.mockupContent} />
                     )}
                   </motion.div>
+                </div>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        {/* Additional projects — compact grid */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+          style={{ marginTop: 80, marginBottom: 32 }}
+        >
+          <h3
+            style={{
+              fontSize: "clamp(1.4rem, 3vw, 1.8rem)",
+              fontWeight: 700,
+              letterSpacing: "-0.02em",
+              color: "#F1F5F9",
+              margin: 0,
+            }}
+          >
+            Más{" "}
+            <span className="gradient-text-orange">proyectos</span>
+          </h3>
+          <p style={{ color: "#475569", fontSize: "0.9rem", margin: "8px 0 0", lineHeight: 1.6 }}>
+            Apps móviles, plataformas web y proyectos adicionales desarrollados.
+          </p>
+        </motion.div>
+
+        <div
+          style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(auto-fill, minmax(280px, 1fr))",
+            gap: 20,
+          }}
+        >
+          {smallProjects.map((project, i) => (
+            <motion.div
+              key={project.title}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.1 }}
+              transition={{ duration: 0.6, delay: i * 0.07, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(255,255,255,0.06)",
+                borderRadius: 16,
+                padding: "28px 28px 24px",
+                position: "relative",
+                overflow: "hidden",
+                transition: "border-color 0.2s ease, transform 0.2s ease",
+              }}
+              whileHover={{ y: -4 }}
+            >
+              <div
+                style={{
+                  position: "absolute",
+                  top: 0,
+                  left: 0,
+                  right: 0,
+                  height: 120,
+                  background: `linear-gradient(135deg, ${project.accentColor}06, transparent)`,
+                  pointerEvents: "none",
+                }}
+              />
+              <div
+                style={{
+                  position: "absolute",
+                  top: -1,
+                  left: 0,
+                  right: 0,
+                  height: 2,
+                  background: `linear-gradient(90deg, ${project.accentColor}60, transparent)`,
+                }}
+              />
+
+              <div style={{ position: "relative", zIndex: 1 }}>
+                <div style={{ display: "flex", alignItems: "center", gap: 12, marginBottom: 16 }}>
+                  <div
+                    style={{
+                      width: 42,
+                      height: 42,
+                      borderRadius: 12,
+                      background: `${project.accentColor}15`,
+                      border: `1px solid ${project.accentColor}25`,
+                      display: "flex",
+                      alignItems: "center",
+                      justifyContent: "center",
+                      fontSize: "0.72rem",
+                      fontWeight: 800,
+                      color: project.accentColor,
+                      letterSpacing: "0.04em",
+                      fontFamily: "monospace",
+                    }}
+                  >
+                    {project.initials}
+                  </div>
+                  <div>
+                    <div
+                      style={{
+                        fontSize: "1rem",
+                        fontWeight: 700,
+                        color: "#F1F5F9",
+                        letterSpacing: "-0.01em",
+                      }}
+                    >
+                      {project.title}
+                    </div>
+                    <div style={{ fontSize: "0.72rem", color: project.accentColor, fontWeight: 600 }}>
+                      {project.subtitle}
+                    </div>
+                  </div>
+                </div>
+
+                <p
+                  style={{
+                    color: "#64748B",
+                    fontSize: "0.85rem",
+                    lineHeight: 1.65,
+                    margin: "0 0 20px",
+                  }}
+                >
+                  {project.description}
+                </p>
+
+                <div style={{ display: "flex", flexWrap: "wrap", gap: 6 }}>
+                  {project.tags.map((tag) => (
+                    <span
+                      key={tag}
+                      style={{
+                        padding: "3px 8px",
+                        background: `${project.accentColor}10`,
+                        border: `1px solid ${project.accentColor}20`,
+                        borderRadius: 5,
+                        fontSize: "0.68rem",
+                        fontWeight: 600,
+                        color: `${project.accentColor}cc`,
+                        letterSpacing: "0.02em",
+                      }}
+                    >
+                      {tag}
+                    </span>
+                  ))}
                 </div>
               </div>
             </motion.div>
