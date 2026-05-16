@@ -14,7 +14,7 @@ const projects = [
     accentColorLight: "#60A5FA",
     gradientFrom: "#1E3A5F",
     gradientTo: "#0F2027",
-    mockupType: "browser" as const,
+    mockupType: "browser",
     mockupContent: {
       primary: "#3B82F6",
       secondary: "#60A5FA",
@@ -39,7 +39,7 @@ const projects = [
     accentColorLight: "#34D399",
     gradientFrom: "#064E3B",
     gradientTo: "#022C22",
-    mockupType: "browser" as const,
+    mockupType: "browser",
     mockupContent: {
       primary: "#10B981",
       secondary: "#34D399",
@@ -64,7 +64,7 @@ const projects = [
     accentColorLight: "#FCD34D",
     gradientFrom: "#78350F",
     gradientTo: "#1C0800",
-    mockupType: "browser" as const,
+    mockupType: "browser",
     mockupContent: {
       primary: "#F59E0B",
       secondary: "#FCD34D",
@@ -89,7 +89,7 @@ const projects = [
     accentColorLight: "#A78BFA",
     gradientFrom: "#2E1065",
     gradientTo: "#0F0A1F",
-    mockupType: "browser" as const,
+    mockupType: "browser",
     mockupContent: {
       primary: "#8B5CF6",
       secondary: "#A78BFA",
@@ -114,7 +114,7 @@ const projects = [
     accentColorLight: "#F9A8D4",
     gradientFrom: "#500724",
     gradientTo: "#1A0010",
-    mockupType: "browser" as const,
+    mockupType: "browser",
     mockupContent: {
       primary: "#EC4899",
       secondary: "#F9A8D4",
