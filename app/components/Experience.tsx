@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const experiences = [
   {
     type: "work",
-    title: "Desarrollo de Aplicación Móvil — FS Therapy",
+    title: "Desarrollo Web — FS Therapy",
     company: "Autónomo",
     period: "Dic 2024 — Actualidad",
     description:
-      "Diseño y desarrollo de aplicación móvil para fisioterapeutas usando React Native con Expo. Backend en Spring Boot con MySQL. Gestión de pacientes, sesiones, ejercicios y seguimiento de progreso.",
-    tags: ["React Native", "Expo", "Spring Boot", "MySQL"],
+      "Diseño y desarrollo del sitio web profesional del fisioterapeuta Fernando Delgado. Página multi-sección con servicios, especialidades y contacto. Desarrollado con Next.js, diseño responsivo y optimización SEO.",
+    tags: ["Next.js", "React", "TailwindCSS", "SEO"],
     color: "#3B82F6",
-    icon: "📱",
+    icon: "🌐",
     url: "https://www.fstherapyfernandodelgado.com/",
   },
   {
