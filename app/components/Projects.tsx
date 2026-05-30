@@ -128,6 +128,31 @@ const projects = [
       ],
     },
   },
+  {
+    title: "MercActiva",
+    subtitle: "Agencia de publicidad digital",
+    description:
+      "Sitio web profesional para agencia de publicidad y marketing digital. Presentación de servicios, portafolio de campañas y formulario de contacto. Diseño moderno y responsivo construido con Next.js y TailwindCSS.",
+    url: "https://www.mercactivapublicidad.com/",
+    tags: ["Next.js", "React", "TailwindCSS", "TypeScript", "Responsive"],
+    accentColor: "#06B6D4",
+    accentColorLight: "#67E8F9",
+    gradientFrom: "#0C4A6E",
+    gradientTo: "#040F1C",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#06B6D4",
+      secondary: "#67E8F9",
+      bg: "#030D18",
+      displayUrl: "mercactivapublicidad.com",
+      displayName: "MercActiva",
+      items: [
+        { label: "Servicios", value: "12+" },
+        { label: "Clientes", value: "30+" },
+        { label: "Campañas", value: "80+" },
+      ],
+    },
+  },
 ];
 
 const smallProjects = [
@@ -166,6 +191,15 @@ const smallProjects = [
     tags: ["HTML", "CSS", "Static Site"],
     accentColor: "#F59E0B",
     initials: "EL",
+  },
+  {
+    title: "CRM RENOVA",
+    subtitle: "CRM inmobiliario — Monday.com + Make",
+    description:
+      "CRM operativo para empresa inmobiliaria con flujo completo desde captación hasta titulación. Tablero estructurado en Monday.com con fases, estados y automatizaciones. Integración Make + ManyChat para captura automática de leads desde WhatsApp. Dashboard directivo con KPIs operativos.",
+    tags: ["Monday.com", "Make", "CRM", "Automatización", "ManyChat"],
+    accentColor: "#6366F1",
+    initials: "CR",
   },
 ];
 
