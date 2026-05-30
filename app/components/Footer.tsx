@@ -1,5 +1,8 @@
 "use client";
 
+import Image from "next/image";
+import Link from "next/link";
+
 export default function Footer() {
   const currentYear = new Date().getFullYear();
 
@@ -10,7 +13,7 @@ export default function Footer() {
   return (
     <footer
       style={{
-        borderTop: "1px solid rgba(255,255,255,0.04)",
+        borderTop: "1px solid rgba(255,255,255,0.05)",
         padding: "40px 0",
         position: "relative",
         overflow: "hidden",
@@ -39,24 +42,18 @@ export default function Footer() {
           }}
         >
           {/* Logo + copy */}
-          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            <div
-              style={{
-                width: 30,
-                height: 30,
-                background: "linear-gradient(135deg, #FF6B35, #FF8C42)",
-                borderRadius: 8,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-                fontSize: "0.72rem",
-                fontWeight: 800,
-                color: "white",
-              }}
-            >
-              ER
-            </div>
-            <span style={{ fontSize: "0.82rem", color: "#475569", fontWeight: 500 }}>
+          <div style={{ display: "flex", alignItems: "center", gap: 14 }}>
+            <Link href="/" style={{ display: "flex", alignItems: "center", position: "relative" }}>
+              <div style={{ position: "relative", height: 32, width: 100 }}>
+                <Image
+                  src="/logo.png"
+                  alt="NEXA WEB"
+                  fill
+                  style={{ objectFit: "contain", objectPosition: "left center", filter: "opacity(0.8)" }}
+                />
+              </div>
+            </Link>
+            <span style={{ fontSize: "0.78rem", color: "#475569", fontWeight: 500 }}>
               © {currentYear} Emiliano Rodríguez. Hecho con Next.js + TailwindCSS.
             </span>
           </div>

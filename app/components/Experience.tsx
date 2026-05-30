@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const experiences = [
   {
@@ -61,7 +62,7 @@ export default function Experience() {
   return (
     <section
       id="experience"
-      style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}
+      style={{ padding: "100px 0 120px", position: "relative", overflow: "hidden" }}
     >
       <div
         className="orb"
@@ -77,35 +78,75 @@ export default function Experience() {
 
       <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="section-label">Trayectoria</span>
-        </motion.div>
+        {/* Header with mascot */}
+        <div className="flex flex-col md:flex-row items-center md:items-start gap-8 mb-14">
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="section-label">Trayectoria</span>
+            </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          style={{ marginBottom: 64 }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 4vw, 2.8rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.03em",
-              color: "#F1F5F9",
-              margin: 0,
-            }}
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontSize: "clamp(2rem, 4vw, 2.8rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.03em",
+                color: "#F1F5F9",
+                margin: "0 0 12px",
+              }}
+            >
+              Estudios &{" "}
+              <span className="gradient-text-mixed">experiencia</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{ color: "#475569", fontSize: "0.95rem", lineHeight: 1.6, maxWidth: 480, margin: 0 }}
+            >
+              Mi formación académica, experiencia profesional y certificaciones que respaldan mi
+              trabajo como desarrollador.
+            </motion.p>
+          </div>
+
+          {/* Mascot estudios */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            style={{ flexShrink: 0, position: "relative" }}
           >
-            Experiencia &{" "}
-            <span className="gradient-text-mixed">formación</span>
-          </h2>
-        </motion.div>
+            <div
+              style={{
+                position: "absolute",
+                inset: "10%",
+                background: "radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(59,130,246,0.1) 60%, transparent 80%)",
+                filter: "blur(28px)",
+                zIndex: 0,
+              }}
+            />
+            <div className="animate-float-delayed" style={{ position: "relative", zIndex: 1 }}>
+              <Image
+                src="/estudios.png"
+                alt="NEXA WEB — estudios y formación"
+                width={220}
+                height={220}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </motion.div>
+        </div>
 
         <div className="grid md:grid-cols-3 gap-10">
 

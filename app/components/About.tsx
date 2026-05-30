@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const stats = [
   { value: "2+", label: "Años de experiencia", color: "#FF6B35" },
@@ -12,7 +13,7 @@ export default function About() {
   return (
     <section
       id="about"
-      style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}
+      style={{ padding: "120px 0 80px", position: "relative", overflow: "hidden" }}
     >
       {/* Background accent */}
       <div
@@ -102,111 +103,43 @@ export default function About() {
             </div>
           </motion.div>
 
-          {/* Right: Stats card */}
+          {/* Right: Mascot + Stats */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.16, 1, 0.3, 1] }}
-            style={{ display: "flex", flexDirection: "column", gap: 16 }}
+            style={{ display: "flex", flexDirection: "column", gap: 20, alignItems: "center" }}
           >
-
-            {/* Main card */}
-            <div
-              className="glass-card"
-              style={{
-                borderRadius: 24,
-                padding: 32,
-                position: "relative",
-                overflow: "hidden",
-              }}
-            >
+            {/* Mascot image */}
+            <div style={{ position: "relative", width: "100%" }}>
+              {/* Glow behind mascot */}
               <div
                 style={{
                   position: "absolute",
-                  top: -40,
-                  right: -40,
-                  width: 160,
-                  height: 160,
-                  background: "radial-gradient(circle, rgba(255,107,53,0.12) 0%, transparent 70%)",
+                  inset: "15%",
+                  background: "radial-gradient(circle, rgba(255,107,53,0.18) 0%, rgba(59,130,246,0.12) 60%, transparent 80%)",
+                  filter: "blur(32px)",
+                  zIndex: 0,
                   borderRadius: "50%",
                 }}
               />
-
-              <div style={{ position: "relative", zIndex: 1 }}>
-                <div
-                  style={{
-                    width: 52,
-                    height: 52,
-                    borderRadius: 14,
-                    background: "linear-gradient(135deg, #FF6B35, #FF8C42)",
-                    display: "flex",
-                    alignItems: "center",
-                    justifyContent: "center",
-                    marginBottom: 20,
-                    boxShadow: "0 0 20px rgba(255,107,53,0.3)",
-                  }}
-                >
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5">
-                    <polyline points="16 18 22 12 16 6" />
-                    <polyline points="8 6 2 12 8 18" />
-                  </svg>
-                </div>
-
-                <h3
-                  style={{
-                    fontSize: "1.1rem",
-                    fontWeight: 700,
-                    color: "#F1F5F9",
-                    margin: "0 0 8px",
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  Full-Stack Developer
-                </h3>
-                <p
-                  style={{
-                    color: "#64748B",
-                    fontSize: "0.88rem",
-                    lineHeight: 1.6,
-                    margin: 0,
-                  }}
-                >
-                  Desde el diseño de base de datos hasta la interfaz final — cubra todo el stack.
-                </p>
-
-                <div
-                  style={{
-                    marginTop: 24,
-                    paddingTop: 20,
-                    borderTop: "1px solid rgba(255,255,255,0.06)",
-                    display: "flex",
-                    gap: 8,
-                    flexWrap: "wrap",
-                  }}
-                >
-                  {["React", "Spring Boot", "MySQL", "Expo"].map((tech) => (
-                    <span
-                      key={tech}
-                      style={{
-                        padding: "3px 10px",
-                        background: "rgba(255,107,53,0.08)",
-                        border: "1px solid rgba(255,107,53,0.15)",
-                        borderRadius: 6,
-                        fontSize: "0.72rem",
-                        fontWeight: 600,
-                        color: "#FF8C42",
-                      }}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                </div>
+              <div
+                className="animate-float"
+                style={{ position: "relative", zIndex: 1, maxWidth: 320, margin: "0 auto" }}
+              >
+                <Image
+                  src="/alzando-manos.png"
+                  alt="NEXA WEB mascota — saludando"
+                  width={320}
+                  height={320}
+                  style={{ objectFit: "contain", width: "100%", height: "auto" }}
+                />
               </div>
             </div>
 
             {/* Stats row */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12 }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: 12, width: "100%" }}>
               {stats.map((stat) => (
                 <div
                   key={stat.label}

@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Image from "next/image";
 
 const projects = [
   {
@@ -203,134 +204,6 @@ const smallProjects = [
   },
 ];
 
-function MobileMockup({ content }: { content: typeof projects[0]["mockupContent"] }) {
-  return (
-    <div
-      style={{
-        width: 200,
-        background: content.bg,
-        border: "1.5px solid rgba(255,255,255,0.08)",
-        borderRadius: 28,
-        overflow: "hidden",
-        boxShadow: `0 30px 60px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.04)`,
-        position: "relative",
-      }}
-    >
-      <div
-        style={{
-          background: "#000",
-          height: 28,
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "flex-end",
-          paddingBottom: 6,
-        }}
-      >
-        <div style={{ width: 60, height: 6, background: "#1a1a1a", borderRadius: 6 }} />
-      </div>
-
-      <div
-        style={{
-          padding: "12px 16px 10px",
-          background: `linear-gradient(135deg, ${content.primary}22, transparent)`,
-          borderBottom: `1px solid ${content.primary}22`,
-        }}
-      >
-        <div style={{ fontSize: "0.65rem", color: "#9CA3AF", marginBottom: 2 }}>Bienvenido</div>
-        <div style={{ fontSize: "0.85rem", fontWeight: 700, color: "#F1F5F9" }}>
-          {content.displayName || "Usuario"}
-        </div>
-      </div>
-
-      <div style={{ padding: "12px 14px", display: "flex", flexDirection: "column", gap: 8 }}>
-        {content.items.map((item) => (
-          <div
-            key={item.label}
-            style={{
-              padding: "10px 12px",
-              background: "rgba(255,255,255,0.04)",
-              border: `1px solid ${content.primary}18`,
-              borderRadius: 10,
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "space-between",
-            }}
-          >
-            <div style={{ display: "flex", alignItems: "center", gap: 8 }}>
-              <div style={{ width: 5, height: 5, borderRadius: "50%", background: content.primary, opacity: 0.8, flexShrink: 0 }} />
-              <span style={{ fontSize: "0.68rem", color: "#94A3B8", fontWeight: 500 }}>
-                {item.label}
-              </span>
-            </div>
-            <span style={{ fontSize: "0.85rem", fontWeight: 800, color: content.secondary }}>
-              {item.value}
-            </span>
-          </div>
-        ))}
-
-        <div
-          style={{
-            height: 60,
-            background: "rgba(255,255,255,0.03)",
-            border: `1px solid ${content.primary}15`,
-            borderRadius: 10,
-            overflow: "hidden",
-            display: "flex",
-            alignItems: "flex-end",
-            padding: "8px 10px",
-            gap: 4,
-          }}
-        >
-          {[40, 65, 45, 80, 55, 90, 70].map((h, i) => (
-            <div
-              key={i}
-              style={{
-                flex: 1,
-                height: `${h}%`,
-                background: `linear-gradient(to top, ${content.primary}88, ${content.secondary}44)`,
-                borderRadius: 3,
-              }}
-            />
-          ))}
-        </div>
-      </div>
-
-      <div
-        style={{
-          padding: "8px 14px 16px",
-          display: "flex",
-          justifyContent: "space-around",
-          borderTop: "1px solid rgba(255,255,255,0.05)",
-        }}
-      >
-        {[0, 1, 2, 3].map((i) => (
-          <div
-            key={i}
-            style={{
-              width: 28,
-              height: 28,
-              borderRadius: 8,
-              background: i === 0 ? `${content.primary}22` : "transparent",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
-          >
-            <div
-              style={{
-                width: i === 0 ? 10 : 8,
-                height: i === 0 ? 10 : 8,
-                borderRadius: i === 2 ? "50%" : 2,
-                background: i === 0 ? content.primary : "rgba(255,255,255,0.15)",
-              }}
-            />
-          </div>
-        ))}
-      </div>
-    </div>
-  );
-}
-
 function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent"] }) {
   return (
     <div
@@ -465,7 +338,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      style={{ padding: "120px 0", position: "relative", overflow: "hidden" }}
+      style={{ padding: "100px 0 120px", position: "relative", overflow: "hidden" }}
     >
       <div
         className="orb"
@@ -491,37 +364,78 @@ export default function Projects() {
       />
 
       <div className="max-w-6xl mx-auto px-6" style={{ position: "relative", zIndex: 1 }}>
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.5 }}
-        >
-          <span className="section-label">Proyectos</span>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.3 }}
-          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
-          style={{ marginBottom: 64 }}
-        >
-          <h2
-            style={{
-              fontSize: "clamp(2rem, 4vw, 2.8rem)",
-              fontWeight: 800,
-              letterSpacing: "-0.03em",
-              color: "#F1F5F9",
-              margin: 0,
-            }}
+        {/* Header with mascot */}
+        <div className="flex flex-col md:flex-row items-center md:items-end gap-6 mb-16">
+          <div className="flex-1">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.5 }}
+            >
+              <span className="section-label">Proyectos</span>
+            </motion.div>
+
+            <motion.h2
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+              style={{
+                fontSize: "clamp(2rem, 4vw, 2.8rem)",
+                fontWeight: 800,
+                letterSpacing: "-0.03em",
+                color: "#F1F5F9",
+                margin: 0,
+              }}
+            >
+              Trabajo{" "}
+              <span className="gradient-text-orange">destacado</span>
+            </motion.h2>
+
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.3 }}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              style={{ color: "#475569", fontSize: "0.95rem", margin: "12px 0 0", lineHeight: 1.6, maxWidth: 480 }}
+            >
+              Proyectos reales entregados a clientes. Cada uno construido con atención al detalle,
+              rendimiento y experiencia de usuario.
+            </motion.p>
+          </div>
+
+          {/* Projects mascot */}
+          <motion.div
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+            style={{ flexShrink: 0, position: "relative" }}
           >
-            Trabajo{" "}
-            <span className="gradient-text-orange">destacado</span>
-          </h2>
-        </motion.div>
+            <div
+              style={{
+                position: "absolute",
+                inset: "10%",
+                background: "radial-gradient(circle, rgba(139,92,246,0.2) 0%, rgba(255,107,53,0.1) 60%, transparent 80%)",
+                filter: "blur(24px)",
+                zIndex: 0,
+              }}
+            />
+            <div className="animate-float" style={{ position: "relative", zIndex: 1 }}>
+              <Image
+                src="/proyectos.png"
+                alt="NEXA WEB — proyectos realizados"
+                width={220}
+                height={220}
+                style={{ objectFit: "contain" }}
+              />
+            </div>
+          </motion.div>
+        </div>
 
-        {/* Featured projects — full cards */}
+        {/* Featured projects */}
         <div style={{ display: "flex", flexDirection: "column", gap: 32 }}>
           {projects.map((project, i) => (
             <motion.div
@@ -671,11 +585,7 @@ export default function Projects() {
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                     style={{ position: "relative", zIndex: 1 }}
                   >
-                    {project.mockupType === "mobile" ? (
-                      <MobileMockup content={project.mockupContent} />
-                    ) : (
-                      <BrowserMockup content={project.mockupContent} />
-                    )}
+                    <BrowserMockup content={project.mockupContent} />
                   </motion.div>
                 </div>
               </div>
@@ -683,7 +593,7 @@ export default function Projects() {
           ))}
         </div>
 
-        {/* Additional projects — compact grid */}
+        {/* Additional projects */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}

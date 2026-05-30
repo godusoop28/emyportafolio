@@ -2,19 +2,23 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+import Link from "next/link";
+import Image from "next/image";
+import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "Inicio", href: "#hero" },
-  { label: "Sobre mí", href: "#about" },
-  { label: "Stack", href: "#stack" },
-  { label: "Proyectos", href: "#projects" },
-  { label: "Experiencia", href: "#experience" },
-  { label: "Contacto", href: "#contact" },
+  { label: "Inicio", href: "/" },
+  { label: "Sobre mí", href: "/sobre-mi" },
+  { label: "Servicios", href: "/servicios" },
+  { label: "Proyectos", href: "/proyectos" },
+  { label: "Estudios", href: "/estudios" },
+  { label: "Contacto", href: "/contacto" },
 ];
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 40);
@@ -28,14 +32,13 @@ export default function Navbar() {
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const handleNavClick = (href: string) => {
+  useEffect(() => {
     setMenuOpen(false);
-    const el = document.querySelector(href);
-    if (el) {
-      setTimeout(() => {
-        el.scrollIntoView({ behavior: "smooth", block: "start" });
-      }, 50);
-    }
+  }, [pathname]);
+
+  const isActive = (href: string) => {
+    if (href === "/") return pathname === "/";
+    return pathname === href;
   };
 
   return (
@@ -49,94 +52,88 @@ export default function Navbar() {
         <div
           style={{
             background: scrolled
-              ? "rgba(6, 6, 17, 0.88)"
-              : "transparent",
-            backdropFilter: scrolled ? "blur(24px)" : "none",
-            WebkitBackdropFilter: scrolled ? "blur(24px)" : "none",
+              ? "rgba(6, 6, 17, 0.92)"
+              : "rgba(6, 6, 17, 0.5)",
+            backdropFilter: "blur(24px)",
+            WebkitBackdropFilter: "blur(24px)",
             borderBottom: scrolled
-              ? "1px solid rgba(255,255,255,0.05)"
-              : "1px solid transparent",
+              ? "1px solid rgba(255,255,255,0.07)"
+              : "1px solid rgba(255,255,255,0.03)",
             transition: "all 0.4s ease",
           }}
         >
           <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
             {/* Logo */}
-            <button
-              onClick={() => handleNavClick("#hero")}
-              className="flex items-center gap-2 group"
-            >
+            <Link href="/" className="flex items-center group">
               <div
                 style={{
-                  width: 36,
-                  height: 36,
-                  background: "linear-gradient(135deg, #FF6B35, #FF8C42)",
-                  borderRadius: 10,
-                  display: "flex",
-                  alignItems: "center",
-                  justifyContent: "center",
-                  fontSize: "0.85rem",
-                  fontWeight: 800,
-                  color: "white",
-                  letterSpacing: "-0.02em",
-                  transition: "transform 0.3s ease, box-shadow 0.3s ease",
-                  boxShadow: "0 0 20px rgba(255,107,53,0.3)",
+                  position: "relative",
+                  height: 38,
+                  width: 130,
+                  transition: "transform 0.3s ease, filter 0.3s ease",
+                  filter: "drop-shadow(0 0 12px rgba(255,107,53,0.25))",
                 }}
-                className="group-hover:scale-110"
+                className="group-hover:scale-105"
               >
-                ER
+                <Image
+                  src="/logo.png"
+                  alt="NEXA WEB"
+                  fill
+                  style={{ objectFit: "contain", objectPosition: "left center" }}
+                  priority
+                />
               </div>
-              <span
-                style={{
-                  fontWeight: 700,
-                  fontSize: "0.95rem",
-                  color: "#F1F5F9",
-                  letterSpacing: "-0.02em",
-                }}
-              >
-                Emiliano<span style={{ color: "#FF6B35" }}>.</span>
-              </span>
-            </button>
+            </Link>
 
             {/* Desktop Nav */}
             <nav className="hidden md:flex items-center gap-1">
               {navLinks.map((link) => (
-                <button
+                <Link
                   key={link.href}
-                  onClick={() => handleNavClick(link.href)}
+                  href={link.href}
                   style={{
                     padding: "6px 14px",
                     borderRadius: 8,
                     fontSize: "0.85rem",
-                    fontWeight: 500,
-                    color: "#94A3B8",
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                    transition: "color 0.2s ease, background 0.2s ease",
+                    fontWeight: isActive(link.href) ? 600 : 500,
+                    color: isActive(link.href) ? "#FF6B35" : "#94A3B8",
+                    background: isActive(link.href)
+                      ? "rgba(255,107,53,0.08)"
+                      : "transparent",
+                    border: isActive(link.href)
+                      ? "1px solid rgba(255,107,53,0.15)"
+                      : "1px solid transparent",
+                    transition: "all 0.2s ease",
+                    textDecoration: "none",
+                    display: "inline-block",
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#F1F5F9";
-                    e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                    if (!isActive(link.href)) {
+                      e.currentTarget.style.color = "#F1F5F9";
+                      e.currentTarget.style.background = "rgba(255,255,255,0.05)";
+                    }
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "#94A3B8";
-                    e.currentTarget.style.background = "transparent";
+                    if (!isActive(link.href)) {
+                      e.currentTarget.style.color = "#94A3B8";
+                      e.currentTarget.style.background = "transparent";
+                    }
                   }}
                 >
                   {link.label}
-                </button>
+                </Link>
               ))}
             </nav>
 
             {/* CTA */}
             <div className="hidden md:flex items-center gap-3">
-              <button
-                onClick={() => handleNavClick("#contact")}
+              <Link
+                href="/contacto"
                 className="btn-primary"
-                style={{ padding: "8px 20px", fontSize: "0.82rem", borderRadius: 10 }}
+                style={{ padding: "8px 20px", fontSize: "0.82rem", borderRadius: 10, textDecoration: "none" }}
               >
                 Contrátame
-              </button>
+              </Link>
             </div>
 
             {/* Mobile Hamburger */}
@@ -154,7 +151,6 @@ export default function Navbar() {
                   background: "#F1F5F9",
                   borderRadius: 2,
                   transformOrigin: "center",
-                  transition: "background 0.2s ease",
                 }}
               />
               <motion.span
@@ -202,44 +198,45 @@ export default function Navbar() {
               className="flex flex-col items-center justify-center h-full gap-2 pb-20"
             >
               {navLinks.map((link, i) => (
-                <motion.button
+                <motion.div
                   key={link.href}
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: i * 0.06, duration: 0.4, ease: [0.16, 1, 0.3, 1] }}
-                  onClick={() => handleNavClick(link.href)}
-                  style={{
-                    fontSize: "1.4rem",
-                    fontWeight: 600,
-                    color: "#94A3B8",
-                    background: "transparent",
-                    border: "none",
-                    cursor: "pointer",
-                    padding: "12px 32px",
-                    borderRadius: 12,
-                    transition: "color 0.2s ease",
-                    letterSpacing: "-0.01em",
-                  }}
-                  onMouseEnter={(e) => {
-                    e.currentTarget.style.color = "#FF6B35";
-                  }}
-                  onMouseLeave={(e) => {
-                    e.currentTarget.style.color = "#94A3B8";
-                  }}
                 >
-                  {link.label}
-                </motion.button>
+                  <Link
+                    href={link.href}
+                    onClick={() => setMenuOpen(false)}
+                    style={{
+                      fontSize: "1.4rem",
+                      fontWeight: isActive(link.href) ? 700 : 600,
+                      color: isActive(link.href) ? "#FF6B35" : "#94A3B8",
+                      display: "block",
+                      padding: "12px 32px",
+                      borderRadius: 12,
+                      textDecoration: "none",
+                      letterSpacing: "-0.01em",
+                    }}
+                  >
+                    {link.label}
+                  </Link>
+                </motion.div>
               ))}
-              <motion.button
+              <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: navLinks.length * 0.06, duration: 0.4 }}
-                onClick={() => handleNavClick("#contact")}
-                className="btn-primary"
-                style={{ marginTop: 16, fontSize: "0.95rem", padding: "12px 36px" }}
+                style={{ marginTop: 16 }}
               >
-                Contrátame
-              </motion.button>
+                <Link
+                  href="/contacto"
+                  onClick={() => setMenuOpen(false)}
+                  className="btn-primary"
+                  style={{ fontSize: "0.95rem", padding: "12px 36px", textDecoration: "none" }}
+                >
+                  Contrátame
+                </Link>
+              </motion.div>
             </motion.nav>
           </motion.div>
         )}
