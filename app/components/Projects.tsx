@@ -154,6 +154,81 @@ const projects = [
       ],
     },
   },
+  {
+    title: "HAREMS",
+    subtitle: "Plataforma SaaS de compañía con IA",
+    description:
+      "Plataforma de chat con personajes impulsados por inteligencia artificial. Sistema de planes y créditos (Free, Trial, Premium, VIP), generación de imágenes con IA, autenticación JWT y galería de personajes con perfiles narrativos. Backend en Spring Boot integrado con OpenRouter para las respuestas de IA, frontend en Next.js.",
+    url: "",
+    tags: ["Next.js", "Spring Boot", "IA · OpenRouter", "JWT", "Suscripciones"],
+    accentColor: "#38BDF8",
+    accentColorLight: "#7DD3FC",
+    gradientFrom: "#0C2A3E",
+    gradientTo: "#03070F",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#38BDF8",
+      secondary: "#7DD3FC",
+      bg: "#05070D",
+      displayUrl: "harems (en desarrollo)",
+      displayName: "HAREMS",
+      items: [
+        { label: "Personajes", value: "IA" },
+        { label: "Planes", value: "4" },
+        { label: "Créditos", value: "Chat/Img" },
+      ],
+    },
+  },
+  {
+    title: "Renova Inversiones",
+    subtitle: "Plataforma de inversión inmobiliaria",
+    description:
+      "Plataforma completa para empresa de inversión inmobiliaria: sitio público con catálogo de propiedades, proceso de inversión, cobertura, testimonios y formulario de captación de leads, más un panel administrativo para gestionar el flujo de inversiones por etapas (oferta, visita, documentación, remodelación). Frontend en Next.js y API REST en Spring Boot.",
+    url: "",
+    tags: ["Next.js", "Spring Boot", "Panel Admin", "API REST", "TailwindCSS"],
+    accentColor: "#2C65F2",
+    accentColorLight: "#C0E001",
+    gradientFrom: "#0C0F58",
+    gradientTo: "#030418",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#2C65F2",
+      secondary: "#C0E001",
+      bg: "#060A1F",
+      displayUrl: "renova-inversiones (en desarrollo)",
+      displayName: "Renova Inversiones",
+      items: [
+        { label: "Propiedades", value: "Catálogo" },
+        { label: "Inversiones", value: "Panel" },
+        { label: "Etapas", value: "Pipeline" },
+      ],
+    },
+  },
+  {
+    title: "INNOVA CRM",
+    subtitle: "CRM inmobiliario a medida",
+    description:
+      "Sistema CRM inmobiliario construido desde cero con panel administrativo propio: gestión de leads por fuente (WhatsApp, Instagram, Facebook), asignación de asesores, pipeline de flujo de venta, catálogo de propiedades y reportes con KPIs en tiempo real. Desarrollado con Next.js, TypeScript y TailwindCSS.",
+    url: "",
+    tags: ["Next.js", "TypeScript", "CRM", "Dashboard", "TailwindCSS"],
+    accentColor: "#AF8E41",
+    accentColorLight: "#C6A664",
+    gradientFrom: "#3A2F12",
+    gradientTo: "#0F0B03",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#AF8E41",
+      secondary: "#C6A664",
+      bg: "#1A1610",
+      displayUrl: "innova-crm (en desarrollo)",
+      displayName: "INNOVA CRM",
+      items: [
+        { label: "Leads", value: "Pipeline" },
+        { label: "Asesores", value: "Equipo" },
+        { label: "Reportes", value: "KPIs" },
+      ],
+    },
+  },
 ];
 
 const smallProjects = [
@@ -522,40 +597,63 @@ export default function Projects() {
                       ))}
                     </div>
 
-                    <a
-                      href={project.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      style={{
-                        display: "inline-flex",
-                        alignItems: "center",
-                        gap: 8,
-                        padding: "10px 22px",
-                        background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColorLight})`,
-                        borderRadius: 10,
-                        fontSize: "0.84rem",
-                        fontWeight: 600,
-                        color: "white",
-                        textDecoration: "none",
-                        transition: "transform 0.2s ease, box-shadow 0.2s ease",
-                        boxShadow: `0 0 20px ${project.accentColor}30`,
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.transform = "translateY(-2px)";
-                        e.currentTarget.style.boxShadow = `0 0 30px ${project.accentColor}50`;
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.transform = "translateY(0)";
-                        e.currentTarget.style.boxShadow = `0 0 20px ${project.accentColor}30`;
-                      }}
-                    >
-                      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                        <polyline points="15 3 21 3 21 9" />
-                        <line x1="10" y1="14" x2="21" y2="3" />
-                      </svg>
-                      Ver sitio en vivo
-                    </a>
+                    {project.url ? (
+                      <a
+                        href={project.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 8,
+                          padding: "10px 22px",
+                          background: `linear-gradient(135deg, ${project.accentColor}, ${project.accentColorLight})`,
+                          borderRadius: 10,
+                          fontSize: "0.84rem",
+                          fontWeight: 600,
+                          color: "white",
+                          textDecoration: "none",
+                          transition: "transform 0.2s ease, box-shadow 0.2s ease",
+                          boxShadow: `0 0 20px ${project.accentColor}30`,
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.transform = "translateY(-2px)";
+                          e.currentTarget.style.boxShadow = `0 0 30px ${project.accentColor}50`;
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.transform = "translateY(0)";
+                          e.currentTarget.style.boxShadow = `0 0 20px ${project.accentColor}30`;
+                        }}
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                          <polyline points="15 3 21 3 21 9" />
+                          <line x1="10" y1="14" x2="21" y2="3" />
+                        </svg>
+                        Ver sitio en vivo
+                      </a>
+                    ) : (
+                      <span
+                        style={{
+                          display: "inline-flex",
+                          alignItems: "center",
+                          gap: 8,
+                          padding: "10px 22px",
+                          background: `${project.accentColor}12`,
+                          border: `1px solid ${project.accentColor}35`,
+                          borderRadius: 10,
+                          fontSize: "0.84rem",
+                          fontWeight: 600,
+                          color: project.accentColorLight,
+                        }}
+                      >
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
+                          <circle cx="12" cy="12" r="10" />
+                          <path d="M12 6v6l4 2" />
+                        </svg>
+                        En desarrollo
+                      </span>
+                    )}
                   </div>
                 </div>
 

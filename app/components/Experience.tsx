@@ -6,6 +6,28 @@ import Image from "next/image";
 const experiences = [
   {
     type: "work",
+    title: "Plataforma de IA — HAREMS",
+    company: "Proyecto personal",
+    period: "2025 — Actualidad",
+    description:
+      "Desarrollo de plataforma SaaS de chat con personajes de IA. Backend en Spring Boot con integración a OpenRouter para generación de texto e imágenes, sistema de autenticación JWT, planes de suscripción (Free, Trial, Premium, VIP) y créditos. Frontend en Next.js con dashboard, galería de personajes y chat en tiempo real.",
+    tags: ["Next.js", "Spring Boot", "IA · OpenRouter", "JWT", "Suscripciones"],
+    color: "#38BDF8",
+    icon: "🤖",
+  },
+  {
+    type: "work",
+    title: "CRMs inmobiliarios — Renova / Innova",
+    company: "Autónomo",
+    period: "2025 — Actualidad",
+    description:
+      "Desarrollo de plataformas a medida para empresas inmobiliarias: Renova Inversiones (sitio público + panel admin para gestión de inversiones por etapas, con API en Spring Boot) e Innova CRM (dashboard de leads, asesores, propiedades y reportes). Construidos con Next.js, TypeScript y TailwindCSS.",
+    tags: ["Next.js", "Spring Boot", "TypeScript", "CRM", "Dashboard"],
+    color: "#AF8E41",
+    icon: "🏢",
+  },
+  {
+    type: "work",
     title: "Desarrollo Web — FS Therapy",
     company: "Autónomo",
     period: "Dic 2024 — Actualidad",
