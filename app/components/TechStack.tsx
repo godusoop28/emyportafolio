@@ -368,7 +368,138 @@ const technologies = [
       </svg>
     ),
   },
+  {
+    name: "IA Generativa",
+    category: "IA",
+    color: "#14B8A6",
+    glow: "rgba(20,184,166,0.14)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#14B8A6">
+        <path d="M12 2l1.545 4.635L18 8l-4.455 1.365L12 14l-1.545-4.635L6 8l4.455-1.365L12 2z" />
+        <path d="M19 13.5l.75 2.25L22 16.5l-2.25.75L19 19.5l-.75-2.25L16 16.5l2.25-.75L19 13.5z" />
+        <path d="M5 14l.6 1.8L7.4 16.4l-1.8.6L5 18.8l-.6-1.8L2.6 16.4l1.8-.6L5 14z" />
+      </svg>
+    ),
+  },
+  {
+    name: "WhatsApp Business",
+    category: "Automatización",
+    color: "#25D366",
+    glow: "rgba(37,211,102,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#25D366">
+        <path d="M12.04 2.001c-5.514 0-9.995 4.48-9.995 9.995 0 1.762.463 3.479 1.343 4.997L2 22l5.144-1.352a9.965 9.965 0 0 0 4.896 1.284h.005c5.514 0 9.995-4.48 9.995-9.997 0-2.669-1.04-5.176-2.929-7.064A9.935 9.935 0 0 0 12.04 2.001zm5.876 14.264c-.242.686-1.418 1.34-1.955 1.4-.5.056-1.13.079-1.822-.115-.42-.117-.96-.303-1.652-.593-2.906-1.255-4.807-4.17-4.95-4.363-.144-.192-1.178-1.566-1.178-2.987 0-1.42.744-2.117 1.008-2.406.264-.288.577-.36.77-.36.192 0 .385.002.553.01.177.008.415-.067.649.495.24.577.816 1.994.888 2.14.072.144.12.312.024.504-.096.192-.144.312-.288.48-.144.168-.303.375-.432.504-.144.144-.294.3-.126.588.168.288.744 1.23 1.598 1.99 1.098.978 2.024 1.281 2.312 1.425.288.144.456.12.624-.072.168-.192.72-.84.912-1.128.192-.288.384-.24.648-.144.264.096 1.68.792 1.968.936.288.144.48.216.552.336.072.12.072.696-.17 1.382z" />
+      </svg>
+    ),
+  },
+  {
+    name: "ManyChat",
+    category: "Automatización",
+    color: "#4C7CFF",
+    glow: "rgba(76,124,255,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#4C7CFF" strokeWidth="1.6">
+        <path d="M4 5h16a1 1 0 0 1 1 1v9a1 1 0 0 1-1 1H9l-5 4v-4H4a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1z" />
+        <path d="M13 8.5l-2.6 3.4h2.4L10.5 15.5l4.3-4.2h-2.3l1.9-2.8z" fill="#4C7CFF" stroke="none" />
+      </svg>
+    ),
+  },
+  {
+    name: "Make",
+    category: "Automatización",
+    color: "#6D00CC",
+    glow: "rgba(109,0,204,0.14)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#8B3DFF" strokeWidth="1.6">
+        <circle cx="8" cy="8" r="4" />
+        <circle cx="16" cy="16" r="4" />
+        <path d="M11 9.5L13 14.5" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "n8n",
+    category: "Automatización",
+    color: "#EA4B71",
+    glow: "rgba(234,75,113,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#EA4B71" strokeWidth="1.6">
+        <circle cx="5" cy="12" r="2.5" fill="#EA4B71" stroke="none" />
+        <circle cx="19" cy="6" r="2.5" fill="#EA4B71" stroke="none" />
+        <circle cx="19" cy="18" r="2.5" fill="#EA4B71" stroke="none" />
+        <path d="M7.3 12h4.7M12 12l4.6-4.6M12 12l4.6 4.6" strokeLinecap="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Pipedrive",
+    category: "CRM",
+    color: "#24B47E",
+    glow: "rgba(36,180,126,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#24B47E" strokeWidth="1.8">
+        <path d="M4 4h16l-6 8v7l-4 1v-8z" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
 ];
+
+const automationCategories = ["IA", "Automatización", "CRM"];
+const automationTech = technologies.filter((t) => automationCategories.includes(t.category));
+const coreTech = technologies.filter((t) => !automationCategories.includes(t.category));
+
+function TechGrid({ items, startDelay = 0 }: { items: typeof technologies; startDelay?: number }) {
+  return (
+    <div
+      style={{
+        display: "grid",
+        gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
+        gap: 12,
+      }}
+    >
+      {items.map((tech, i) => (
+        <motion.div
+          key={tech.name}
+          initial={{ opacity: 0, y: 20, scale: 0.95 }}
+          whileInView={{ opacity: 1, y: 0, scale: 1 }}
+          viewport={{ once: true, amount: 0.2 }}
+          transition={{
+            duration: 0.5,
+            delay: startDelay + i * 0.03,
+            ease: [0.16, 1, 0.3, 1],
+          }}
+          className="tech-card"
+          style={{ "--card-glow": tech.glow } as React.CSSProperties}
+        >
+          <div style={{ marginBottom: 12 }}>{tech.icon}</div>
+          <div
+            style={{
+              fontSize: "0.82rem",
+              fontWeight: 700,
+              color: "#E2E8F0",
+              letterSpacing: "-0.01em",
+              marginBottom: 4,
+            }}
+          >
+            {tech.name}
+          </div>
+          <div
+            style={{
+              fontSize: "0.65rem",
+              fontWeight: 600,
+              color: tech.color,
+              letterSpacing: "0.06em",
+              textTransform: "uppercase",
+              opacity: 0.8,
+            }}
+          >
+            {tech.category}
+          </div>
+        </motion.div>
+      ))}
+    </div>
+  );
+}
 
 export default function TechStack() {
   return (
@@ -429,59 +560,47 @@ export default function TechStack() {
               maxWidth: 500,
             }}
           >
-            Mi stack{" "}
+  Mi stack{" "}
             <span className="gradient-text-blue">tecnológico</span>
           </h2>
         </motion.div>
 
-        <div
+        {/* Automation & AI — highlighted block */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.3 }}
+          transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(auto-fill, minmax(130px, 1fr))",
-            gap: 12,
+            marginBottom: 24,
+            padding: "20px 24px",
+            borderRadius: 18,
+            background: "linear-gradient(135deg, rgba(20,184,166,0.06), rgba(139,61,255,0.06))",
+            border: "1px solid rgba(20,184,166,0.15)",
           }}
         >
-          {technologies.map((tech, i) => (
-            <motion.div
-              key={tech.name}
-              initial={{ opacity: 0, y: 20, scale: 0.95 }}
-              whileInView={{ opacity: 1, y: 0, scale: 1 }}
-              viewport={{ once: true, amount: 0.2 }}
-              transition={{
-                duration: 0.5,
-                delay: i * 0.03,
-                ease: [0.16, 1, 0.3, 1],
+          <div style={{ display: "flex", alignItems: "center", gap: 8, marginBottom: 4 }}>
+            <span style={{ fontSize: "1.1rem" }}>✨</span>
+            <h3
+              style={{
+                fontSize: "1.05rem",
+                fontWeight: 700,
+                color: "#F1F5F9",
+                margin: 0,
+                letterSpacing: "-0.01em",
               }}
-              className="tech-card"
-              style={{ "--card-glow": tech.glow } as React.CSSProperties}
             >
-              <div style={{ marginBottom: 12 }}>{tech.icon}</div>
-              <div
-                style={{
-                  fontSize: "0.82rem",
-                  fontWeight: 700,
-                  color: "#E2E8F0",
-                  letterSpacing: "-0.01em",
-                  marginBottom: 4,
-                }}
-              >
-                {tech.name}
-              </div>
-              <div
-                style={{
-                  fontSize: "0.65rem",
-                  fontWeight: 600,
-                  color: tech.color,
-                  letterSpacing: "0.06em",
-                  textTransform: "uppercase",
-                  opacity: 0.8,
-                }}
-              >
-                {tech.category}
-              </div>
-            </motion.div>
-          ))}
-        </div>
+              Automatización & IA
+            </h3>
+          </div>
+          <p style={{ color: "#64748B", fontSize: "0.85rem", margin: "0 0 20px", lineHeight: 1.6 }}>
+            Lo más reciente que domino: flujos con IA que conectan WhatsApp, chatbots y CRMs sin
+            intervención manual.
+          </p>
+          <TechGrid items={automationTech} />
+        </motion.div>
+
+        <TechGrid items={coreTech} startDelay={0.1} />
       </div>
     </section>
   );

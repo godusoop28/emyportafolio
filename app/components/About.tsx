@@ -5,8 +5,8 @@ import Image from "next/image";
 
 const stats = [
   { value: "2+", label: "Años de experiencia", color: "#FF6B35" },
-  { value: "10+", label: "Tecnologías dominadas", color: "#3B82F6" },
-  { value: "5+", label: "Proyectos entregados", color: "#8B5CF6" },
+  { value: "30+", label: "Tecnologías dominadas", color: "#3B82F6" },
+  { value: "15+", label: "Proyectos entregados", color: "#8B5CF6" },
 ];
 
 export default function About() {
@@ -87,6 +87,13 @@ export default function About() {
               <strong style={{ color: "#94A3B8" }}>Cédula Profesional: 15597124</strong>.
             </p>
 
+            <p style={{ color: "#64748B", lineHeight: 1.8, fontSize: "1rem", margin: 0 }}>
+              También diseño{" "}
+              <strong style={{ color: "#94A3B8" }}>automatizaciones con IA</strong> que conectan
+              WhatsApp, ManyChat, Make y n8n con CRMs como Pipedrive y Monday.com, para captar y
+              dar seguimiento a clientes sin trabajo manual.
+            </p>
+
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingTop: 4 }}>
               {[
                 "Web Apps",
@@ -94,6 +101,8 @@ export default function About() {
                 "Móvil",
                 "Bases de datos",
                 "Backend",
+                "Automatización",
+                "IA",
                 "Freelance",
               ].map((tag) => (
                 <span key={tag} className="tag">

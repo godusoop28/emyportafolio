@@ -277,6 +277,33 @@ const smallProjects = [
     accentColor: "#6366F1",
     initials: "CR",
   },
+  {
+    title: "ALIVOS",
+    subtitle: "Plataforma de cursos — Estimulación Temprana",
+    description:
+      "Plataforma educativa online con área de alumnos (cursos, dashboard, progreso, compras) y panel administrativo completo para gestión de cursos, módulos, estudiantes y accesos.",
+    tags: ["Next.js", "TypeScript", "Panel Admin", "E-learning"],
+    accentColor: "#14B8A6",
+    initials: "AL",
+  },
+  {
+    title: "Tapas y Envases",
+    subtitle: "Catálogo industrial — sitio estático",
+    description:
+      "Sitio web de catálogo para distribuidora industrial de envases: presentación de productos, categorías y contacto. Desarrollo estático en HTML y CSS puro, ligero y rápido de cargar.",
+    tags: ["HTML", "CSS", "Catálogo", "Static Site"],
+    accentColor: "#0EA5E9",
+    initials: "TE",
+  },
+  {
+    title: "Perfil WISC-IV",
+    subtitle: "Herramienta de análisis psicométrico",
+    description:
+      "Aplicación web para generar gráficas de perfil de puntuaciones de la prueba WISC-IV, con exportación de imágenes para uso clínico. Construida con Next.js y TypeScript.",
+    tags: ["Next.js", "React", "TypeScript", "Data Viz"],
+    accentColor: "#D946EF",
+    initials: "WI",
+  },
 ];
 
 function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent"] }) {

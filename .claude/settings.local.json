@@ -11,7 +11,16 @@
       "Bash(python -c \"import sys,json;d=json.load\\(sys.stdin\\);print\\(d.get\\('expo',{}\\).get\\('name'\\)\\);print\\(d.get\\('expo',{}\\).get\\('description',''\\)\\)\")",
       "Bash(npx tsc *)",
       "PowerShell(New-Item *)",
-      "Bash(npx --no-install next lint)"
+      "Bash(npx --no-install next lint)",
+      "Bash(\"./node_modules/.bin/tsc\" --noEmit)",
+      "Bash(curl -s http://localhost:3000/proyectos)",
+      "Bash(curl -s http://localhost:3000/)",
+      "Bash(curl -s http://localhost:3000/sobre-mi)",
+      "Bash(curl -s http://localhost:3000/servicios)",
+      "Bash(pkill -f \"next dev\")",
+      "Bash(pkill -f \"next-server\")",
+      "Bash(git add *)",
+      "Bash(git commit -m ' *)"
     ]
   }
 }

@@ -83,6 +83,33 @@ const services = [
     bg: "rgba(37,211,102,0.08)",
     border: "rgba(37,211,102,0.2)",
   },
+  {
+    title: "Automatización con IA (ManyChat, Make, n8n)",
+    description: "Diseño flujos de automatización que conectan WhatsApp, ManyChat, Make y n8n con tu CRM (Pipedrive, Monday.com) para responder y capturar leads sin intervención manual.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <circle cx="6" cy="6" r="3" />
+        <circle cx="18" cy="18" r="3" />
+        <path d="M9 7.5L15 16.5" strokeLinecap="round" />
+      </svg>
+    ),
+    color: "#8B3DFF",
+    bg: "rgba(139,61,255,0.08)",
+    border: "rgba(139,61,255,0.2)",
+  },
+  {
+    title: "CRM y gestión de leads con IA",
+    description: "Implemento y personalizo CRMs (Pipedrive, Monday.com, a medida) con pipelines, reportes y asistentes de IA para calificar y dar seguimiento a leads automáticamente.",
+    icon: (
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+        <path d="M12 2l1.545 4.635L18 8l-4.455 1.365L12 14l-1.545-4.635L6 8l4.455-1.365L12 2z" fill="currentColor" stroke="none" />
+        <path d="M4 14h16l-6 8v-6l-4 1z" />
+      </svg>
+    ),
+    color: "#14B8A6",
+    bg: "rgba(20,184,166,0.08)",
+    border: "rgba(20,184,166,0.2)",
+  },
 ];
 
 export default function Services() {
