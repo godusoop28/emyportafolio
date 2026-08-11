@@ -442,6 +442,42 @@ const technologies = [
       </svg>
     ),
   },
+  {
+    name: "EasyBroker",
+    category: "CRM",
+    color: "#AF8E41",
+    glow: "rgba(175,142,65,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#AF8E41" strokeWidth="1.6">
+        <path d="M3 10.5L12 4l9 6.5" strokeLinecap="round" strokeLinejoin="round" />
+        <path d="M5 9.5V19a1 1 0 0 0 1 1h4v-5h4v5h4a1 1 0 0 0 1-1V9.5" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Runware (IA imágenes)",
+    category: "IA",
+    color: "#14B8A6",
+    glow: "rgba(20,184,166,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="#14B8A6" strokeWidth="1.6">
+        <rect x="3" y="3" width="18" height="18" rx="3" />
+        <circle cx="8.5" cy="8.5" r="1.6" fill="#14B8A6" stroke="none" />
+        <path d="M21 15l-5.5-5.5a1.5 1.5 0 0 0-2.1 0L4 19" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+  },
+  {
+    name: "Vimeo API",
+    category: "API",
+    color: "#1AB7EA",
+    glow: "rgba(26,183,234,0.12)",
+    icon: (
+      <svg viewBox="0 0 24 24" width="28" height="28" fill="#1AB7EA">
+        <path d="M22.396 7.164c-.093 2.026-1.507 4.8-4.245 8.32-2.83 3.68-5.226 5.52-7.187 5.52-1.216 0-2.244-1.122-3.083-3.366-.56-2.05-1.12-4.1-1.68-6.15-.622-2.244-1.29-3.366-2.003-3.366-.156 0-.7.328-1.634.98L1.5 8.028c1.026-.902 2.037-1.804 3.033-2.706C5.87 3.99 6.99 3.226 7.72 3.16c1.71-.165 2.762.998 3.155 3.49.424 2.687.718 4.36.882 5.017.49 2.226.83 3.338 1.033 3.338.156 0 .456-.246.9-.738.443-.492.86-1.107 1.25-1.845.39-.738.6-1.29.63-1.656.052-.63-.183-.945-.7-.945-.25 0-.508.057-.774.17.514-1.68 1.494-2.496 2.943-2.448 1.075.033 1.582.729 1.523 2.088-.03.702-.174 1.494-.436 2.376.32-.68.65-1.31.99-1.892.55-.94 1.098-1.708 1.646-2.302.548-.594 1.093-.89 1.635-.89.42 0 .742.174.968.522.226.348.34.807.34 1.377v.322z" />
+      </svg>
+    ),
+  },
 ];
 
 const automationCategories = ["IA", "Automatización", "CRM"];

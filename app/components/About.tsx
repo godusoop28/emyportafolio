@@ -94,6 +94,14 @@ export default function About() {
               dar seguimiento a clientes sin trabajo manual.
             </p>
 
+            <p style={{ color: "#64748B", lineHeight: 1.8, fontSize: "1rem", margin: 0 }}>
+              Esa experiencia también me llevó al mundo de los{" "}
+              <strong style={{ color: "#94A3B8" }}>datos e integraciones</strong>: construyo
+              pipelines que ingieren, transforman, enriquecen y sincronizan información entre
+              APIs externas (EasyBroker, Google Sheets, Vimeo), CRMs y paneles de administración
+              propios.
+            </p>
+
             <div style={{ display: "flex", gap: 12, flexWrap: "wrap", paddingTop: 4 }}>
               {[
                 "Web Apps",
@@ -102,6 +110,7 @@ export default function About() {
                 "Bases de datos",
                 "Backend",
                 "Automatización",
+                "Data & Integraciones",
                 "IA",
                 "Freelance",
               ].map((tag) => (

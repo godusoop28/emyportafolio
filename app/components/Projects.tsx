@@ -205,12 +205,37 @@ const projects = [
     },
   },
   {
-    title: "INNOVA CRM",
-    subtitle: "CRM inmobiliario a medida",
+    title: "Century 21 Inova",
+    subtitle: "Automatización y distribución de leads inmobiliarios",
     description:
-      "Sistema CRM inmobiliario construido desde cero con panel administrativo propio: gestión de leads por fuente (WhatsApp, Instagram, Facebook), asignación de asesores, pipeline de flujo de venta, catálogo de propiedades y reportes con KPIs en tiempo real. Desarrollado con Next.js, TypeScript y TailwindCSS.",
+      "Sistema de automatización que recibe prospectos desde WhatsApp y campañas de Meta Ads, normaliza la información del lead, consulta y enriquece datos de propiedades contra una API inmobiliaria, y distribuye automáticamente cada lead entre los asesores disponibles. Un pipeline completo de ingesta, transformación, enriquecimiento y sincronización de datos entre plataformas, construido con herramientas de automatización sin servidor propio.",
     url: "",
-    tags: ["Next.js", "TypeScript", "CRM", "Dashboard", "TailwindCSS"],
+    tags: ["Make", "ManyChat", "WhatsApp API", "EasyBroker API", "Webhooks", "Google Sheets"],
+    accentColor: "#65A30D",
+    accentColorLight: "#A3E635",
+    gradientFrom: "#2A3A0A",
+    gradientTo: "#0B0F03",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#65A30D",
+      secondary: "#A3E635",
+      bg: "#10140A",
+      displayUrl: "automatización de leads",
+      displayName: "Century 21 Inova",
+      items: [
+        { label: "Leads", value: "Auto" },
+        { label: "Fuentes", value: "WhatsApp/Meta" },
+        { label: "Asesores", value: "Asignación" },
+      ],
+    },
+  },
+  {
+    title: "Inova Admin Panel",
+    subtitle: "Dashboard administrativo de datos inmobiliarios",
+    description:
+      "Panel administrativo que centraliza la información generada por el ecosistema de automatización de Century 21 Inova. Consume datos desde Google Sheets y una API inmobiliaria externa, con autenticación propia y sincronización opcional vía webhook, para darle a los asesores una interfaz simple de consulta y operación sobre los leads procesados.",
+    url: "",
+    tags: ["Next.js", "TypeScript", "Google Sheets API", "EasyBroker", "Auth"],
     accentColor: "#AF8E41",
     accentColorLight: "#C6A664",
     gradientFrom: "#3A2F12",
@@ -220,12 +245,62 @@ const projects = [
       primary: "#AF8E41",
       secondary: "#C6A664",
       bg: "#1A1610",
-      displayUrl: "innova-crm (en desarrollo)",
-      displayName: "INNOVA CRM",
+      displayUrl: "inova-panel (en desarrollo)",
+      displayName: "Inova Admin Panel",
       items: [
-        { label: "Leads", value: "Pipeline" },
-        { label: "Asesores", value: "Equipo" },
-        { label: "Reportes", value: "KPIs" },
+        { label: "Fuentes", value: "3 APIs" },
+        { label: "Vista", value: "Dashboard" },
+        { label: "Acceso", value: "Login" },
+      ],
+    },
+  },
+  {
+    title: "Menzo",
+    subtitle: "Red social móvil para comunidades",
+    description:
+      "Aplicación social móvil orientada a pequeñas comunidades: perfiles, membresías, roles, feeds y personalización de apariencia por comunidad. Backend propio con autenticación JWT y refresh tokens, subida de archivos y health checks. Cerca de 36 pantallas desarrolladas en Flutter, con build y despliegue configurados para Android.",
+    url: "",
+    tags: ["Flutter", "Dart", "Spring Boot", "PostgreSQL", "JWT"],
+    accentColor: "#0D9488",
+    accentColorLight: "#2DD4BF",
+    gradientFrom: "#042F2E",
+    gradientTo: "#01100F",
+    mockupType: "phone",
+    mockupContent: {
+      primary: "#0D9488",
+      secondary: "#2DD4BF",
+      bg: "#01100F",
+      displayUrl: "36+ pantallas · Android",
+      displayName: "Menzo",
+      items: [
+        { label: "Pantallas", value: "36+" },
+        { label: "Backend", value: "REST + JWT" },
+        { label: "Plataforma", value: "Android" },
+      ],
+    },
+  },
+  {
+    title: "Sunnyday",
+    subtitle: "Arquitectura omnicanal de automatización comercial",
+    description:
+      "Diseño de arquitectura de automatización para el proceso comercial de una compañía de energía solar: unifica leads provenientes de Meta Ads, WhatsApp, web y referidos mediante n8n, los enriquece con IA y los sincroniza con un CRM. Incluye un agente de IA de seguimiento que resume el historial de conversación, clasifica al prospecto y redacta correos de seguimiento personalizados con aprobación humana antes del envío.",
+    url: "",
+    tags: ["n8n", "Pipedrive", "IA / LLM", "Meta Ads", "WhatsApp Business", "Human-in-the-loop"],
+    accentColor: "#FACC15",
+    accentColorLight: "#FDE68A",
+    gradientFrom: "#3A2E05",
+    gradientTo: "#0F0C01",
+    mockupType: "browser",
+    mockupContent: {
+      primary: "#FACC15",
+      secondary: "#FDE68A",
+      bg: "#161200",
+      displayUrl: "n8n → CRM → agente IA",
+      displayName: "Sunnyday",
+      items: [
+        { label: "Canales", value: "Omnicanal" },
+        { label: "Pipeline", value: "n8n" },
+        { label: "Agente IA", value: "Seguimiento" },
       ],
     },
   },
@@ -281,8 +356,8 @@ const smallProjects = [
     title: "ALIVOS",
     subtitle: "Plataforma de cursos — Estimulación Temprana",
     description:
-      "Plataforma educativa online con área de alumnos (cursos, dashboard, progreso, compras) y panel administrativo completo para gestión de cursos, módulos, estudiantes y accesos.",
-    tags: ["Next.js", "TypeScript", "Panel Admin", "E-learning"],
+      "Plataforma educativa (LMS) a medida con área de alumnos (cursos, módulos, lecciones, progreso, compras) y panel administrativo completo, incluyendo otorgamiento manual de accesos. Backend en Spring Boot con PostgreSQL, video vía Vimeo API y despliegue en Render + Vercel.",
+    tags: ["Spring Boot", "PostgreSQL", "Vimeo API", "Render", "E-learning"],
     accentColor: "#14B8A6",
     initials: "AL",
   },
@@ -429,6 +504,79 @@ function BrowserMockup({ content }: { content: typeof projects[0]["mockupContent
               {item.value}
             </div>
             <div style={{ fontSize: "0.55rem", color: "#6B7280" }}>{item.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function PhoneMockup({ content }: { content: typeof projects[0]["mockupContent"] }) {
+  return (
+    <div
+      style={{
+        width: 220,
+        maxWidth: "100%",
+        background: content.bg,
+        border: "1.5px solid rgba(255,255,255,0.08)",
+        borderRadius: 36,
+        padding: "16px 12px",
+        boxShadow: `0 30px 60px rgba(0,0,0,0.5)`,
+      }}
+    >
+      <div
+        style={{
+          width: 70,
+          height: 18,
+          background: "rgba(0,0,0,0.35)",
+          borderRadius: 12,
+          margin: "0 auto 18px",
+        }}
+      />
+
+      <div style={{ textAlign: "center", marginBottom: 20 }}>
+        <div
+          style={{
+            width: 56,
+            height: 56,
+            borderRadius: 16,
+            background: `linear-gradient(135deg, ${content.primary}, ${content.secondary})`,
+            margin: "0 auto 10px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontWeight: 800,
+            fontSize: "1.05rem",
+            color: "#0B0B16",
+          }}
+        >
+          {(content.displayName || "AP").slice(0, 2).toUpperCase()}
+        </div>
+        <div style={{ fontSize: "0.85rem", fontWeight: 800, color: content.secondary }}>
+          {content.displayName}
+        </div>
+        <div style={{ fontSize: "0.6rem", color: "#6B7280", marginTop: 2 }}>
+          {content.displayUrl}
+        </div>
+      </div>
+
+      <div style={{ display: "flex", flexDirection: "column", gap: 8 }}>
+        {content.items.map((item) => (
+          <div
+            key={item.label}
+            style={{
+              display: "flex",
+              justifyContent: "space-between",
+              alignItems: "center",
+              padding: "9px 12px",
+              background: "rgba(255,255,255,0.04)",
+              borderRadius: 10,
+            }}
+          >
+            <span style={{ fontSize: "0.66rem", color: "#8B93A3" }}>{item.label}</span>
+            <span style={{ fontSize: "0.7rem", fontWeight: 700, color: content.secondary }}>
+              {item.value}
+            </span>
           </div>
         ))}
       </div>
@@ -710,7 +858,11 @@ export default function Projects() {
                     transition={{ repeat: Infinity, duration: 4, ease: "easeInOut" }}
                     style={{ position: "relative", zIndex: 1 }}
                   >
-                    <BrowserMockup content={project.mockupContent} />
+                    {project.mockupType === "phone" ? (
+                      <PhoneMockup content={project.mockupContent} />
+                    ) : (
+                      <BrowserMockup content={project.mockupContent} />
+                    )}
                   </motion.div>
                 </div>
               </div>
